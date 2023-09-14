@@ -69,7 +69,7 @@ namespace Queue.Controller
                     MinAndMax();
                     break;
                 case 5:
-                    view.FindItemGUI();
+                    FindItem();
                     break;
                 case 6:
                     view.PrintAllItemsGUI();
@@ -165,7 +165,7 @@ namespace Queue.Controller
 
             if(vendingQueue.Count == 0)
             {
-                Console.WriteLine("There is nothing inside your queue");
+                Console.WriteLine("There is nothing inside your queue");  
             }
             else if(vendingQueue.Count == 1)
             {
@@ -184,12 +184,22 @@ namespace Queue.Controller
 
         void FindItem()
         {
+            bool ifFound = false;
 
+            string find = view.FindItemGUI();
 
-
-            foreach( var item in vendingQueue)
+            foreach ( var item in vendingQueue)
             {
+                if (item.Drink == find)
+                {
+                    view.ShowFoundItem(item.Drink, item.Brand);
+                    ifFound = true;
+                }
+            }
 
+            if (!ifFound)
+            {
+                view.NoItem(find);
             }
         }
 

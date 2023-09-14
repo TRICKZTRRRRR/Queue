@@ -127,12 +127,25 @@ namespace Queue.View
         /// GUI for find item
         /// Task 5
         /// </summary>
-        public void FindItemGUI()
+        public string FindItemGUI()
         {
             Console.Clear();
             Console.Title = "Find a item";
             Console.Write("What item do you want to find?" +
-                "\nItem: "); 
+                "\nItem: ");
+            string fItem = Console.ReadLine();
+
+            return fItem;
+        }
+
+        public void ShowFoundItem(string FoundIt, string brand)
+        {
+            Console.WriteLine($"Your item name is {FoundIt} and the Brand is {brand}");
+        }
+
+        public void NoItem(string name)
+        {
+            Console.WriteLine($"There is no such item \"{name}\" in our queue");
         }
 
         /// <summary>
