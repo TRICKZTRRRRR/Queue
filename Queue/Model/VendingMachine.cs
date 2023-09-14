@@ -18,9 +18,5 @@ namespace Queue.Model
         public string Brand { get {  return brand; } set {  brand = value; } }
         #endregion
 
-        #region Constructor
-
-        #endregion
-
     }
 }
