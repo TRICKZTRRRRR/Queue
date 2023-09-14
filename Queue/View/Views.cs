@@ -43,7 +43,7 @@ namespace Queue.View
         public void Drinks(string drink, string brand)
         {
             Console.WriteLine($"Drink:\t{drink}\n" + 
-                $"Brank:\t{brand}\n");
+                $"Brand:\t{brand}\n");
         }
 
         #region GUI
